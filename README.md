@@ -9,7 +9,7 @@ List of tests:
 - Test 05: Integration of a pre-compiled x86-64 dynamic library (.dll), obtained by a C implmentation of an AUTOSAR-Classic-inspired application software.
 - Test 06: Integration of a pre-compiled x86-64 dynamic library (.dll), obtained by a C implmentation of an AUTOSAR-Classic-inspired application software. Solver's rollback is also handled.
 
-List of tests to be done:
+Plan of tests to be done:
 
-- Test 06 may need better testing.
+- Test 06 need testing. The variable 'time' is not allowed in a function.
 - Other tests are not planned.

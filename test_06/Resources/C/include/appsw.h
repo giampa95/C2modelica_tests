@@ -47,19 +47,16 @@ void destructor(void);
  * ------
  * One reactivation of the App SW.
  *
- *   events             bitmask of the discrete event(s) active at this
+ *   simTime             simulation time - needed to handle solver's roolback.
+ *   events              bitmask of the discrete event(s) active at this
  *                       instant (see EVENT_*_BIT in scheduler_events.h).
  *                       More than one bit may be set at once.
  *   R_SWC1_value        "Required" input: value read by SWC1.
  *   R_SWC1_gain         "Required" input: gain read by SWC1.
- *   P_SWC1_valueGained   "Provided" output: SWC1_value * SWC1_gain.
- *   PR_SWC2_counter      "Provided" output: SWC2's free-running counter,
+ *   P_SWC1_valueGained  "Provided" output: SWC1_value * SWC1_gain.
+ *   PR_SWC2_counter     "Provided" output: SWC2's free-running counter,
  *                       surfaced as a double (its native type is uint8)
  *                       for direct interfacing with Modelica's Real.
- *
- * There is intentionally no "time" argument: doStep() is purely reactive
- * to the events bitmask, exactly like the runnables it schedules, and has
- * no need to know the current simulation time to do its job.
  */
 void doStep(double simTime,
             EventMaskType events,

@@ -30,23 +30,45 @@ extern int32 gSWC1_gain;
 extern int32 gSWC1_valueGained;
 extern uint8 gSWC2_counter;
 
-void Write_gSWC1_value(const int32 value);
-void Write_gSWC1_gain(const int32 value);
-void Write_gSWC1_valueGained(const int32 value);
+inline void Write_gSWC1_value(const int32 value)
+{
+    gSWC1_value = value;
+}
 
-/*
- * NOTE / correction from the original requirement text: the port was
- * specified as "void Write_gSWC2_counter(const int8 value)" (and the
- * matching Read_gSWC2_counter(int8 *value)). gSWC2_counter is a uint8 (as
- * required elsewhere in this spec), and no int8 datatype was requested
- * anywhere in this project, so both functions below use uint8 instead, to
- * stay consistent with the variable they access.
- */
-void Write_gSWC2_counter(const uint8 value);
+inline void Write_gSWC1_gain(const int32 value)
+{
+    gSWC1_gain = value;
+}
 
-void Read_gSWC1_value(int32 *value);
-void Read_gSWC1_gain(int32 *value);
-void Read_gSWC1_valueGained(int32 *value);
-void Read_gSWC2_counter(uint8 *value);
+inline void Write_gSWC1_valueGained(const int32 value)
+{
+    gSWC1_valueGained = value;
+}
+
+inline void Write_gSWC2_counter(const uint8 value)
+{
+    gSWC2_counter = value;
+}
+
+inline void Read_gSWC1_value(int32 *value)
+{
+    *value = gSWC1_value;
+}
+
+inline void Read_gSWC1_gain(int32 *value)
+{
+    *value = gSWC1_gain;
+}
+
+inline void Read_gSWC1_valueGained(int32 *value)
+{
+    *value = gSWC1_valueGained;
+}
+
+inline void Read_gSWC2_counter(uint8 *value)
+{
+    *value = gSWC2_counter;
+}
+
 
 #endif /* INTERFACES_H */

@@ -11,16 +11,49 @@
 
 #include "datatypes.h"
 
-void GetState_gSWC1_value(int32 *value);
-void SetState_gSWC1_value(const int32 value);
+extern int32 gSWC1_value;
+extern int32 gSWC1_gain;
+extern int32 gSWC1_valueGained;
+extern uint8 gSWC2_counter;
 
-void GetState_gSWC1_gain(int32 *gain);
-void SetState_gSWC1_gain(const int32 gain);
+inline void GetState_gSWC1_value(int32 *value)
+{
+    *value = gSWC1_value;
+}
 
-void GetState_gSWC1_valueGained(int32 *valueGained);
-void SetState_gSWC1_valueGained(const int32 valueGained);
+inline void SetState_gSWC1_value(const int32 value)
+{
+    gSWC1_value = value;
+}
 
-void GetState_gSWC2_counter(uint8 *counter);
-void SetState_gSWC2_counter(const uint8 counter);
+inline void GetState_gSWC1_gain(int32 *gain)
+{
+    *gain = gSWC1_gain;
+}
+
+inline void SetState_gSWC1_gain(const int32 gain)
+{
+    gSWC1_gain = gain;
+}
+
+inline void GetState_gSWC1_valueGained(int32 *valueGained)
+{
+    *valueGained = gSWC1_valueGained;
+}
+
+inline void SetState_gSWC1_valueGained(const int32 valueGained)
+{
+    gSWC1_valueGained = valueGained;
+}
+
+inline void GetState_gSWC2_counter(uint8 *counter)
+{
+    *counter = gSWC2_counter;
+}
+
+inline void SetState_gSWC2_counter(const uint8 counter)
+{
+    gSWC2_counter = counter;
+}
 
 #endif /* STATE_INTERFACES_H */
