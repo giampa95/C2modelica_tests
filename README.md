@@ -8,9 +8,10 @@
 - **Test 04**: Integration of a pre-compiled x86-64 static library (.lib), obtained by a C implementation of the ReLu function returning the result by value.
 - **Test 05**: Integration of a pre-compiled x86-64 dynamic library (.dll), obtained by a C implmentation of an AUTOSAR-Classic-inspired application software.
 - **Test 06**: Integration of a pre-compiled x86-64 dynamic library (.dll), obtained by a C implmentation of an AUTOSAR-Classic-inspired application software. Solver's rollback is also handled.
+- **Test 07**: Integration of a pre-compiled x86-64 dynamic library (.dll), obtained by a C implmentation of an AUTOSAR-Classic-inspired application software. Solver's rollback is also handled. Differently from *Test 06*, specific functions are used to set and get values from Modelica wrapper to C code. 
 
 ## List of planned tests and updates
 
-- **Test 06** needs testing to verify the correct behaviour in solver's rollback handling.
-- **Test 05** and **Test 06** may be updated considering FMI-like interfaces for inputs and outputs handling. This needs additional definition of C code functions to consider interfaces casting to native Modelica datatypes (double, integer). Further considerations are needed.
-- Further tests are not planned.
+- **Test 06** and **Test 07** need testing to verify the correct behaviour in solver's rollback handling.
+- For **Test 05**, **Test 06** and **Test 07** need to investigate if different names would be more appropriate for the inputs and outputs of the Application Software. Currently using names like `R_<name>`, `P_<name>` and `PR_<name>`.
+- Further tests are not currently planned.
